@@ -29,4 +29,8 @@ class societiesModel extends Authenticatable
         return $this->belongsTo(regionalmodel::class);
     }
 
+    public function validation(){
+        return $this->hasMany(Validationmodel::class);
+    }
+
 }

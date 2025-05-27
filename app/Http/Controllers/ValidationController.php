@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class ValidationController extends Controller
 {
     public function validate(Request $request){
-        $societies = Auth::guard('api');
+        $societies = Auth::guard('api')->user()->id;
         $request->validate([
             'job' => 'required',
             'job_description' => 'required',
@@ -18,11 +18,14 @@ class ValidationController extends Controller
         ]);
 
         Validationmodel::create([
+            // 'id' => $societies->id,
             'job' => $request->job,
             'job_description' => $request->job_description,
             'income' => $request->income,
             'reason_accepted' => $request->reason_accepted,
         ]);
+
+
         return response()->json([
             'message' => 'Request data validation sent succesfull',
         ],200);

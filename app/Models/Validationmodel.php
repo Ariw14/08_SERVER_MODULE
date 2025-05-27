@@ -18,4 +18,8 @@ class Validationmodel extends Model
         'reason_accepted',
         'validator_notes',
     ];
+
+    public function society(){
+        return $this->belongsTo(societiesModel::class);
+    }
 }
