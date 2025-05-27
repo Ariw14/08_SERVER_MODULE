@@ -43,7 +43,7 @@ return [
         'api' => [
             'driver' => 'sanctum',
             'provider' => 'societies',
-            'Hash' => false,
+            // 'Hash' => false,
         ],
     ],
 
