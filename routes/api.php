@@ -22,7 +22,7 @@ route::prefix('v1')->group(function (){
     route::post('/validation', [ValidationController::class, 'validate']);
     route::get('/validation', [ValidationController::class, 'getdata']);
     //instalment
-    route::get('/instalment_cars', [CarsController::class, 'getdata']);
+    route::get('/instalment_cars', [CarsController::class, 'data']);
     route::get('/instalment_cars/{id}', [CarsController::class, 'getdatabyid']);
     //aplication
     route::post('/applications', [ApplicationsController::class, 'apply']);
