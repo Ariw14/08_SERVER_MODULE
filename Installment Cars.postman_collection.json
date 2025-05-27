@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "b16e9d5d-1a2d-4c0e-b970-ba78b5beca0c",
+		"name": "Installment Cars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39524631"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "A1a - login success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id_card_number\": \"20210001\", \"password\": \"1212112\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A1b login failed",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "A1c - logout success",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A1d - logout failed",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request Data Validation",
+			"item": [
+				{
+					"name": "A2a - request data validation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "sometext",
+									"type": "text"
+								},
+								{
+									"key": "job_description",
+									"value": "sometext",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "sometext",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "sometext",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/validation",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"validation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A2b - Request validation invalid token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get the validation",
+			"item": [
+				{
+					"name": "A2c - Get validation succes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/validation",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"validation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "A2d - Get validation invalid token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "job",
+									"value": "sometext",
+									"type": "text"
+								},
+								{
+									"key": "job_descripton",
+									"value": "sometext",
+									"type": "text"
+								},
+								{
+									"key": "income",
+									"value": "sometext",
+									"type": "text"
+								},
+								{
+									"key": "reason_accepted",
+									"value": "sometext",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/validation",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"validation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Installment",
+			"item": [
+				{
+					"name": "A3b - Get all installment cars",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "A3b - Get all installment cars invalid token",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Installment Detail",
+			"item": [
+				{
+					"name": "A3c - Get detail installment cars",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "A3d - Get detail installment cars invalid token",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Applying for installment",
+			"item": [
+				{
+					"name": "A4a - Applying for installment success",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "A4b - Applying for installment invalid token",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "A4c - If the society validations hasn't accepted by validator",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "A4d - invalid field",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "A4e - if 2nd apply",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get all installment applications",
+			"item": [
+				{
+					"name": "Get all installment application success",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get all installment application invalid token",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

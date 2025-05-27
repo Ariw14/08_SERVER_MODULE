@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class ValidationController extends Controller
 {
     public function validate(Request $request){
-        $societies = Auth::guard('api')->user()->id;
+        $user_id = auth('api')->user()->id;
         $request->validate([
             'job' => 'required',
             'job_description' => 'required',
