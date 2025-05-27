@@ -24,4 +24,9 @@ class societiesModel extends Authenticatable
         'regional_id',
         'login_token',
     ];
+
+    public function regional(){
+        return $this->belongsTo(regionalmodel::class);
+    }
+
 }

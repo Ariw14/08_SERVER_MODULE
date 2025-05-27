@@ -20,7 +20,7 @@ Route::prefix('v1/auth')->group(function (){
 route::prefix('v1')->group(function (){
     //validation
     route::post('/validation', [ValidationController::class, 'validate']);
-    route::get('/validations', [ValidationController::class, 'getdata']);
+    route::get('/validation', [ValidationController::class, 'getdata']);
     //instalment
     route::get('/instalment_cars', [CarsController::class, 'getdata']);
     route::get('/instalment_cars/{id}', [CarsController::class, 'getdatabyid']);
